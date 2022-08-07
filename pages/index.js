@@ -23,14 +23,14 @@ export default function Home({projects}) {
       <ColorModeSwitch />
       <Container maxW="1200px" px={['2rem',null]} pt={['2rem',null]} display="flex"  gap={[null,"1rem","6rem"]} flexDir={['column',"column",'row']} maxHeight={[null,'auto','100vh']} overflowY={[null,"hidden"]} height={['auto','auto',"100vh"]}>
         <Box className="left" flex="0.5" my={[null, null, "4rem"]} position={'relative'} > 
-          <Heading size={'4xl'}>Hello, I'm Karabo Sambo</Heading>
+          <Heading size={'4xl'}>Hello, I%=&apos;m Karabo Sambo</Heading>
           {/* About Me */}
           <Text mt={6} fontSize={'md'} lineHeight={'1.6rem'}>
           I am a self taught web developer from South Africa Looking to make great things on the web and become a part of something meaningful.
           I mostly work on front-end development and build web sites and web projects with React and Next.js I am currently looking for work as a junior front-end developer.
           </Text>
           <Text as='quote' display={'block'} fontStyle={'italic'} fontSize={'smaller'} mt={'2'} color={fadedText}>
-           "I just want to chill, play music and make a living doing the things I love. I just happen to love creating things and being a part of something bigger than me"
+           &quot;I just want to chill, play music and make a living doing the things I love. I just happen to love creating things and being a part of something bigger than me&quot;
           </Text>
           {/* Vertical Nav */}
           <Stack as='nav' mt={'30px'}>

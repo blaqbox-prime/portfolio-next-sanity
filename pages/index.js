@@ -23,6 +23,10 @@ export default function Home({projects}) {
       <ColorModeSwitch />
       <Head>
         <title>Portfolio | Home</title>
+        <link key='link_1' rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link key='link_2' rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link key='link_3' rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
       </Head>
       <Container maxW="1200px" px={['2rem',null]} pt={['2rem',null]} display="flex"  gap={[null,"1rem","6rem"]} flexDir={['column',"column",'row']} maxHeight={[null,'auto','100vh']} overflowY={[null,"hidden"]} height={['auto','auto',"100vh"]}>
         <Box className="left" flex="0.5" my={[null, null, "4rem"]} position={'relative'} > 

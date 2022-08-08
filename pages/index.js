@@ -21,9 +21,12 @@ export default function Home({projects}) {
   return (
     <Box>
       <ColorModeSwitch />
+      <Head>
+        <title>Portfolio | Home</title>
+      </Head>
       <Container maxW="1200px" px={['2rem',null]} pt={['2rem',null]} display="flex"  gap={[null,"1rem","6rem"]} flexDir={['column',"column",'row']} maxHeight={[null,'auto','100vh']} overflowY={[null,"hidden"]} height={['auto','auto',"100vh"]}>
         <Box className="left" flex="0.5" my={[null, null, "4rem"]} position={'relative'} > 
-          <Heading size={'4xl'}>Hello, I%=&apos;m Karabo Sambo</Heading>
+          <Heading size={'4xl'}>Hello, I&apos;m Karabo Sambo</Heading>
           {/* About Me */}
           <Text mt={6} fontSize={'md'} lineHeight={'1.6rem'}>
           I am a self taught web developer from South Africa Looking to make great things on the web and become a part of something meaningful.

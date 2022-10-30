@@ -1,15 +1,13 @@
 import { Avatar, Box, Container, Flex, Heading, Icon, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import  {BsLinkedin, BsGithub} from 'react-icons/bs'
 import  {HiOutlineExternalLink} from 'react-icons/hi'
-import ProjectsList from '../components/ProjectsList'
 import {client} from '../lib/client'
 import ProjectCard from '../components/ProjectCard'
-import { GoMarkGithub } from 'react-icons/go'
 import ContactForm from '../components/ContactForm'
 import ColorModeSwitch from '../components/ColorModeSwitch'
+import {useEffect, useRef} from 'react';
+import {gsap} from 'gsap';
 
 export default function Home({projects}) {
 
@@ -18,8 +16,22 @@ export default function Home({projects}) {
   const fadedText = useColorModeValue('blackAlpha.600', 'whiteAlpha.600')
   const fadedLine = useColorModeValue('blackAlpha.800', 'whiteAlpha.800')
 
+  const comp = useRef();
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.timeline().from(".fadeDown",{opacity:0, y: -50, stagger: .2, duration:1})
+      .from(".ProjectCard",{opacity:0,x:-30,duration: 1, stagger: .5})
+    }, comp);
+  
+    return () => {
+      ctx.revert();
+    }
+  }, [])
+  
+
   return (
-    <Box>
+    <Box ref={comp}>
       <ColorModeSwitch />
       <Head>
         <title>Portfolio | Home</title>
@@ -30,17 +42,17 @@ export default function Home({projects}) {
       </Head>
       <Container maxW="1200px" px={['2rem',null]} pt={['2rem',null]} display="flex"  gap={[null,"1rem","6rem"]} flexDir={['column',"column",'row']} maxHeight={[null,'auto','100vh']} overflowY={[null,"hidden"]} height={['auto','auto',"100vh"]}>
         <Box className="left" flex="0.5" my={[null, null, "4rem"]} position={'relative'} > 
-          <Heading size={'4xl'}>Hello, I&apos;m Karabo Sambo</Heading>
+          <Heading className="fadeDown" size={'4xl'}>Hello, I&apos;m Karabo Sambo</Heading>
           {/* About Me */}
-          <Text mt={6} fontSize={'md'} lineHeight={'1.6rem'}>
-          I am a self taught web developer from South Africa Looking to make great things on the web and become a part of something meaningful.
+          <Text className="fadeDown" mt={6} fontSize={'md'} lineHeight={'1.6rem'}>
+          I am software development student and a self taught web developer from South Africa Looking to make great things on the web and become a part of something meaningful.
           I mostly work on front-end development and build web sites and web projects with React and Next.js I am currently looking for work as a junior front-end developer.
           </Text>
-          <Text as='quote' display={'block'} fontStyle={'italic'} fontSize={'smaller'} mt={'2'} color={fadedText}>
+          <Text className="fadeDown" as='quote' display={'block'} fontStyle={'italic'} fontSize={'smaller'} mt={'2'} color={fadedText}>
            &quot;I just want to chill, play music and make a living doing the things I love. I just happen to love creating things and being a part of something bigger than me&quot;
           </Text>
           {/* Vertical Nav */}
-          <Stack as='nav' mt={'30px'}>
+          <Stack as='nav' mt={'30px'} className="fadeDown">
             <Link href='#projects'>
             <Flex alignItems={'center'} mb={3}>
               <Text>01</Text>
@@ -59,7 +71,7 @@ export default function Home({projects}) {
 
           </Stack>
           {/* {Horizontal Socials} */}
-          <Stack direction="row" mt={10} spacing={8} alignItems="center">
+          <Stack direction="row" mt={10} spacing={8} alignItems="center" className="fadeDown">
             <Avatar name="Karabo Sambo" src='/images/avatar.jpg' size={'sm'} mr="8"/> 
             
               <Link href="https://www.linkedin.com/in/karabo-sambo-b768621b7/">

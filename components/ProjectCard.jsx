@@ -1,13 +1,22 @@
 import { Box, Flex, Icon, Link, Text, useColorModeValue } from "@chakra-ui/react";
 import { GoMarkGithub, GoGlobe } from "react-icons/go";
+import {gsap} from 'gsap'
+
+import {useEffect, useRef} from 'react';
+
+
+
 
 function ProjectCard({ project }) {
+
 
   const fadedText = useColorModeValue('blackAlpha.600', 'whiteAlpha.600')
   const fadedLine = useColorModeValue('blackAlpha.800', 'whiteAlpha.800')
 
   return (
-    <Box as={"article"} boxShadow={"lg"} borderRadius={"none"} my={"5"} p={5}>
+    <Box as={'article'} boxShadow={"lg"} borderRadius={"none"} my={"5"} p={5}
+    className="ProjectCard"
+    >
     <Text
       fontSize={"x-small"}
       textTransform={"uppercase"}
